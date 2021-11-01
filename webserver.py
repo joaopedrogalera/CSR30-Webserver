@@ -36,7 +36,7 @@ def httpRequest(conn):
     data = conn.recv(8192)
     if data:
         #Converte o conteúdo do request para string e imprime (Python cuida das quebras de linha)
-        datastr = data.decode('utf-8')
+        datastr = data.decode('ascii')
         print(datastr)
 
         headerLines = datastr.split('\r\n')
@@ -60,10 +60,10 @@ def httpRequest(conn):
                 content = f.read()
                 f.close()
 
-        conn.send(('HTTP/1.0 '+statusCode+'\r\n').encode('utf-8'))
-        conn.send(('Content-Type: '+contentType+'\r\n').encode('utf-8'))
+        conn.send(('HTTP/1.0 '+statusCode+'\r\n').encode('ascii'))
+        conn.send(('Content-Type: '+contentType+'\r\n').encode('ascii'))
         conn.send(b'\r\n')
-        conn.send(content)
+        conn.sendall(content)
     conn.close()
 
 def main():
