@@ -6,8 +6,9 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #ddd;
-  font-family: arial, sans-serif;
+  background: #d62d95;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color: #e997dc;
   height: 100%;
 }
 
@@ -16,5 +17,5 @@ div{
 }
 
 img{
-  width: 300px;
+  width: 400px;
 }

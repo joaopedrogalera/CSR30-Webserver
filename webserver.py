@@ -30,6 +30,12 @@ def getContentType(fileName):
         return 'image/jpeg'
     if ext == 'css':
         return 'text/css'
+    if ext == 'js':
+        return 'text/javascript'
+    if ext == 'gif':
+        return 'image/gif'
+    if ext == 'mp3':
+        return 'audio/mpeg'
     return 'application/octet-stream'
 
 def httpRequest(conn):
